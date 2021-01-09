@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kensuke/programming/c-c++/driver4motor_SM-42BYG011-25/sample/include/driver_pkg/include/motor.hpp
+fstream
+-
+string
+-
+unistd.h
+/home/kensuke/programming/c-c++/driver4motor_SM-42BYG011-25/sample/include/driver_pkg/include/unistd.h
+
+/home/kensuke/programming/c-c++/driver4motor_SM-42BYG011-25/sample/src/sample.cpp
+iostream
+-
+cmath
+-
+../include/driver_pkg/include/motor.hpp
+/home/kensuke/programming/c-c++/driver4motor_SM-42BYG011-25/sample/include/driver_pkg/include/motor.hpp
+

@@ -1,28 +1,36 @@
-# robosys2020-kadai1
-## ロボシス2020年の課題１
-## ドライバの使い方
-1. ```cd driver```をしてdriverのディレクトリに入ってmake.shを実行
-2. ```/dev/mystep0```に 1, 2, 3, 4の順番に書き込むことによってモータを1相 (低トルク) で使用することができる。
-3. ```/dev/mystep0```に 5, 6, 7, 8の順番に書き込むことによってモータを2相（高トルク）で使用することができる。
-4. ```/dev/mystep0```に 0を書き込むことでフリー回転になる
-## テストプログラムの使い方
-1. ```cd driver && ./make.sh```を実行することでドライバのコンパイルと実装
-2. robosys2020-kadai1のディレクトリにある test.py を実行することでモータの動作を確認することができる。
-3. modeは0で1相、1で2相の動きをする。
-- 動作の様子:
-    1. 1相<br/>https://youtu.be/SrfqMdDaEHo
-    2. 2相<br/>https://youtu.be/Se_fWRdSnS8
-## 注意
-- 使用後は```sudo rmmod mystep```を実行する
-## 使用器具
-- ステッピングモータ
+# driver4motor_SM-42BYG011-25
+
+## ::::: Documentation :::::
+### How to install driver
+1. clone repository<br/>
+```git clone https://github.com/bonohub13/driver4motor_SM-42BYG011-25.git```
+2. enter the _driver_ directory<br/>
+```cd driver```
+3. run ```make``` inside the _driver_ directory to compile.
+4. run ```install.sh``` to install the module.
+- After used, make sure to uninstall the module by running ```rmmod mystep```
+
+### How to use driver
+- By writing 1, 2, 3, 4 into the device file, (/dev/mystep0) the motor turns using micro step mode (low torque).
+- By writing 5, 5, 7, 8 into the device file, the motor turns using full step mode (high torque).
+- ex.) ```echo 1 > /dev/mystep0```
+### How to use package (functions to easilly utilize the driver)
+1. Copy the _driver\_pkg_ directory under _include_ directory of your project.
+2. Follow the CMakeLists.txt file under sample directory and modify your CMakeLists.txt file.
+3. Compile
+
+## Utilized equipment
+1. Motor
     - SM-42BYG011
-- Raspberry Pi 3B+
-## 配線：pin情報
-- 赤：29（GPIO5）
-- 緑：31（GPIO6）
-- 黃：33（GPIO13）
-- 青：35（GPIO19）
-## 参考文献
-- https://github.com/anhquan18/robosys2019_raspberry_led/blob/master/myled.c
-    - Nguyen Anh Quan, 2019
+2. Raspberry PI
+    - Raspberry Pi 3B+
+
+## Pin layout
+- Red cable
+    - 29(GPIO: 5)
+- Green cable
+    - 31(GPIO: 6)
+- Yellow cable
+    - 33(GPIO: 13)
+- Cyan cable
+    - 35(GPIO: 19)

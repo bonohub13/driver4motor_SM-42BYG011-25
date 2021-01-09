@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdriver_pkg.a CMakeFiles/driver_pkg.dir/include/motor.cpp.o
+/usr/bin/ranlib libdriver_pkg.a

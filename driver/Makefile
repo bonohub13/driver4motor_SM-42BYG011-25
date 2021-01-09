@@ -1,4 +1,7 @@
-obj-m := mystep.o        #オブジェクトファイルの名前を指定（拡張子はo）
+obj-m := mystep.o        #オブジェクトファイルの名前を指定 (拡張子はo)
+insmod := insmod
+chmod := chmod
+rmmod := rmmod
 
 mystep.ko: mystep.c
 	make -C /usr/src/linux-headers-`uname -r` M=`pwd` V=1 modules

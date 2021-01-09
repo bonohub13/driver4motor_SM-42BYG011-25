@@ -1,12 +1,22 @@
+// Licensed under GPL-3.0 only
+/* mystep.c
+ *
+ * driver for stepping motor SM-42BYG011
+ *
+ * Copyright(C) 2020 Kataoka Tatsumi
+ * Copyright(C) 2021 Kensuke Saito
+*/
+
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
 #include <linux/device.h>
 #include <linux/uaccess.h>
 #include <linux/io.h>
+
 MODULE_AUTHOR("Kataoka Tatsumi");
 MODULE_DESCRIPTION("driver for Stepping motor [SM-42BYG011]");
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("GPL v3");
 MODULE_VERSION("0.0.1");
 
 static dev_t dev;
@@ -27,7 +37,7 @@ static ssize_t motor_write(struct file* filp, const char* buf, size_t count, lof
         * 10 is off
         * 7 is on
     */
-    //1 ~ 4は低トルク
+    //1 ~ 4は低トルク (1 - 4 -> low torque)
     if (c == '1') {
         gpio_base[7] = 1 << gpio_pins[0];
         gpio_base[10] = 1 << gpio_pins[1];
@@ -53,7 +63,7 @@ static ssize_t motor_write(struct file* filp, const char* buf, size_t count, lof
         gpio_base[7] = 1 << gpio_pins[3];
     }
     // ==== 1相はここまで ====
-    // 2相はここから
+    // 2相はここから (5 - 8 high torque)
     else if (c == '5') {
         gpio_base[7] = 1 << gpio_pins[0];
         gpio_base[10] = 1 << gpio_pins[1];
