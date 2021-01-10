@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/sample.dir/src/sample.cpp.o -o sample  include/driver_pkg/libdriver_pkg.a include/driver_pkg/libdriver_pkg.a 

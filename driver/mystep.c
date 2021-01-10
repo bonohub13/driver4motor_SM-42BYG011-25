@@ -16,7 +16,7 @@
 
 MODULE_AUTHOR("Kataoka Tatsumi");
 MODULE_DESCRIPTION("driver for Stepping motor [SM-42BYG011]");
-MODULE_LICENSE("GPL v3");
+MODULE_LICENSE("GPL");
 MODULE_VERSION("0.0.1");
 
 static dev_t dev;
