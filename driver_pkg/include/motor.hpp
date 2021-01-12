@@ -18,10 +18,10 @@ namespace Motor
     private:
         void sleep_(float seconds);
     public: // functions
-        // moves motors to a certain angle (1.8 * targetSteps
+        // moves motors to a certain angle (1.8 * targetSteps)
         /* mode:
-            * true or 1  > clockwise
-            * false or 0 > counterclockwise
+            * true or 1  > counterclockwise
+            * false or 0 > clockwise
         */
         void micro_step_mode(uint32_t targetSteps, bool mode, float seconds);
         void micro_step_mode(uint32_t &targetSteps, bool &mode, float &seconds);
@@ -31,8 +31,8 @@ namespace Motor
         void full_step_mode(uint32_t &targetSteps, bool &mode, float &seconds);
         /* moves motor infinitely clockwise/counterclockwise
             * mode:
-                * true or 1  > clockwise
-                * false or 0 > counterclockwise
+                * true or 1  > counterclockwise
+                * false or 0 > clockwise
         */
         void micro_step_mode_spin(bool mode, float seconds);
         void micro_step_mode_spin(bool &mode, float &seconds);
