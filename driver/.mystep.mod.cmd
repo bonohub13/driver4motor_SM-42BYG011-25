@@ -1,1 +1,0 @@
-cmd_/home/ubuntu/programming/c-c++/driver4motor_SM-42BYG011-25/driver/mystep.mod := { echo  /home/ubuntu/programming/c-c++/driver4motor_SM-42BYG011-25/driver/mystep.o; echo; } > /home/ubuntu/programming/c-c++/driver4motor_SM-42BYG011-25/driver/mystep.mod
