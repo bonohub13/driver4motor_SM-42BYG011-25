@@ -19,13 +19,13 @@
 2. Follow the CMakeLists.txt file under sample directory and modify your CMakeLists.txt file.
 3. Compile
 
-## Utilized equipment
+### Utilized equipment
 1. Motor
     - SM-42BYG011
 2. Raspberry PI
     - Raspberry Pi 3B+
 
-## Pin layout
+### Pin layout
 - Red cable
     - 29(GPIO: 5)
 - Green cable
@@ -34,7 +34,7 @@
     - 33(GPIO: 13)
 - Cyan cable
     - 35(GPIO: 19)
-- ref:
+### Reference:
     - RaspberryPi Foundation, GPIO
     - source:
         - [GPIO layout](https://www.raspberrypi.org/documentation/usage/gpio/README.md)
