@@ -35,6 +35,6 @@
 - Cyan cable
     - 35(GPIO: 19)
 ### Reference:
-    - RaspberryPi Foundation, GPIO
+- RaspberryPi Foundation, GPIO
     - source:
         - [GPIO layout](https://www.raspberrypi.org/documentation/usage/gpio/README.md)
