@@ -1,3 +1,6 @@
+#ifndef DRIVER_PKG_HPP
+#define DRIVER_PKG_HPP
+
 #include <fstream>
 #include <string>
 #include "unistd.h"
@@ -44,3 +47,5 @@ namespace Motor
         void halt();
     };
 }
+
+#endif
