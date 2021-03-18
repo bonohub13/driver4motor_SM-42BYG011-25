@@ -28,6 +28,7 @@ void Motor::SM_42BYG011::micro_step_mode(uint32_t targetStep, bool mode, float s
 {
     counter = 0;
     targetStep = (mode) ? targetStep : targetStep*3+1;
+    
     while (counter<=targetStep)
     {
         this->mode = counter%4 + 1 + base;
@@ -44,8 +45,10 @@ void Motor::SM_42BYG011::micro_step_mode(uint32_t targetStep, bool mode, float s
             else
                 counter += 3;
         }
+
         sleep_(seconds);
     }
+    
     this->halt();
 }
 void Motor::SM_42BYG011::micro_step_mode(uint32_t &targetStep, bool &mode, float &seconds)
