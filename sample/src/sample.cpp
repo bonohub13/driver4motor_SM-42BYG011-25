@@ -43,11 +43,13 @@ void full_step_wipe(std::unique_ptr<Motor::SM_42BYG011> &motor)
 
 int main(int argc, char** argv)
 {
-    std::unique_ptr<Motor::SM_42BYG011> motor = std::make_unique<Motor::SM_42BYG011>("/dev/mystep0");
+    Motor::SM_42BYG011_UniquePtr motor;
     auto mode = std::string(argv[1]);
 
     std::cout << "argc: " << argc << std::endl;
     std::cout << "argv[1]: " << argv[1] << std::endl;
+
+    motor = Motor::create_unique_SM_42BYG011("/dev/mystep0");
 
     if (argc > 1)
     {

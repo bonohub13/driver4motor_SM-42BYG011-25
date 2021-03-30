@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <string>
+#include <memory>
 #include "unistd.h"
 
 namespace Motor
@@ -46,6 +47,17 @@ namespace Motor
         // stop motor
         void halt();
     };
+
+    std::unique_ptr<SM_42BYG011> create_unique_SM_42BYG011(std::string& devicePath);
+    std::unique_ptr<SM_42BYG011> create_unique_SM_42BYG011(std::string devicePath);
+    std::unique_ptr<SM_42BYG011> create_unique_SM_42BYG011(const char* devicePath);
+    std::shared_ptr<SM_42BYG011> create_shared_SM_42BYG011(std::string& devicePath);
+    std::shared_ptr<SM_42BYG011> create_shared_SM_42BYG011(std::string devicePath);
+    std::shared_ptr<SM_42BYG011> create_shared_SM_42BYG011(const char* devicePath);
+
+    typedef std::unique_ptr<SM_42BYG011> SM_42BYG011_UniquePtr;
+    typedef std::shared_ptr<SM_42BYG011> SM_42BYG011_SharedPtr;
+    typedef std::weak_ptr<SM_42BYG011> SM_42BYG011_WeakPtr;
 }
 
 #endif
